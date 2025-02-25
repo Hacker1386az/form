@@ -106,26 +106,28 @@
         <button onclick="sendToWhatsApp()">ارسال به واتساپ</button>
         <img src="logo3.jpg" class="bottom-logo">
     </div>
+<script>
+    function sendToWhatsApp() {
+        let name = document.getElementById("name").value;
+        let family = document.getElementById("family").value;
+        let father = document.getElementById("father").value;
+        let nationalCode = document.getElementById("nationalCode").value;
+        let birthDate = document.getElementById("birthDate").value;
+        let grade = document.getElementById("grade").value;
+        let school = document.getElementById("school").value;
+        let address = document.getElementById("address").value;
+        let phone = document.getElementById("phone").value;
+        let group = document.getElementById("group").value;
 
-    <script>
-        function sendToWhatsApp() {
-            let name = document.getElementById("name").value;
-            let family = document.getElementById("family").value;
-            let father = document.getElementById("father").value;
-            let nationalCode = document.getElementById("nationalCode").value;
-            let birthDate = document.getElementById("birthDate").value;
-            let grade = document.getElementById("grade").value;
-            let school = document.getElementById("school").value;
-            let address = document.getElementById("address").value;
-            let phone = document.getElementById("phone").value;
-            let group = document.getElementById("group").value;
+        let message = ثبت نام جدید\n-----------------\nنام: ${name}\nنام خانوادگی: ${family}\nنام پدر: ${father}\nکد ملی: ${nationalCode}\nتاریخ تولد: ${birthDate}\nپایه تحصیلی: ${grade}\nمدرسه: ${school}\nآدرس: ${address}\nشماره تماس: ${phone}\nنام گروه سرود: ${group};
 
-            let message = ثبت نام جدید%0A-----------------%0Aنام: ${name}%0Aنام خانوادگی: ${family}%0Aنام پدر: ${father}%0Aکد ملی: ${nationalCode}%0Aتاریخ تولد: ${birthDate}%0Aپایه تحصیلی: ${grade}%0Aمدرسه: ${school}%0Aآدرس: ${address}%0Aشماره تماس: ${phone}%0Aنام گروه سرود: ${group};
-            
-            let phoneNumber = "989178537782"; // شماره واتساپ بدون +
-            window.open(https://wa.me/${phoneNumber}?text=${message}, "_blank");
-        }
-    </script>
+        let phoneNumber = "989178537782"; // شماره واتساپ بدون +
+        let encodedMessage = encodeURIComponent(message); // تبدیل به فرمت URL
+        let whatsappUrl = https://wa.me/${phoneNumber}?text=${encodedMessage};
+
+        window.open(whatsappUrl, "_blank");
+    }
+</script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
 </body>
