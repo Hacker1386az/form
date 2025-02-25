@@ -151,8 +151,8 @@
                   <input type="text" name="phone" required="" />
                   <label for="order">سن:</label>
                   <input type="text" name="order" required="" />
-                  <label for="shahab">پایه تحصیلی :</label>
-                  <input type="text" name2="shahab" required="" />
+                  <label for="namber">پایه تحصیلی :</label>
+                  <input type="text" name2="namber" required="" />
                   <label for="mhmd">نام مدرسه:</label>
                   <input type="text" name="mhmd" required="" />
                   <label for="ali">نام گروه سرود:</label>
@@ -176,14 +176,14 @@
                   const order3 = formData.get('order');
                  const mhmd = formData.get('mhmd');
                 const ali = formData.get('ali');
-              const shahab = formData.get('shahab');
+              const namber = formData.get('namber');
 
 
 
 
                   // شماره واتساپ خود را در اینجا وارد کنید
                   const whatsappNumber2 = '+989174864880';
-                  const message = `ثبت نام جدید:\nنام: ${name}\nنام پدر: ${name2}\nپایه تحصیلی: ${shahab}\nکد ملی : ${email}\nشماره تماس: ${phone}\nنام مدرسه: ${mhmd}\nسن: ${order}\nنام گروه سرود: ${ali}`;
+                  const message = `ثبت نام جدید:\nنام: ${name}\nنام پدر: ${name2}\nپایه تحصیلی: ${namber}\nکد ملی : ${email}\nشماره تماس: ${phone}\nنام مدرسه: ${mhmd}\nسن: ${order}\nنام گروه سرود: ${ali}`;
                   const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber2}&text=${encodeURIComponent(message)}`;
                   // باز کردن لینک واتساپ
                   window.open(whatsappLink, '_blank');
