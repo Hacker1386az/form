@@ -60,6 +60,73 @@
             color: rgba(250, 235, 215, 0);
         }
     </style>
+         <style>
+    /* استایل برای پس‌زمینه پاپ‌آپ */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* استایل برای محتوای پاپ‌آپ */
+    .popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+    
+    /* استایل دکمه بستن */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 50%;
+    }
+  
+    /* استایل تصویر در پاپ‌آپ */
+    .popup-content img {
+      width: 300px; /* اندازه عکس را می‌توان تغییر داد */
+      border-radius: 10px;
+    }
+  </style>
+  
+  <!-- ساختار پاپ‌آپ -->
+  <div id="popup" class="popup-container">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">×</button>
+      <img src="logo3.jpg" alt="Popup Image">
+    </div>
+  </div>
+  
+  <script>
+    // نمایش خودکار پاپ‌آپ بعد از چند ثانیه
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('popup').style.display = 'flex';
+      }, 2000); // نمایش بعد از ۲ ثانیه
+    };
+  
+    // تابع بستن پاپ‌آپ
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+
 </head>
 <body>
     <img src="logo2.jpg" class="top-left" alt="Top Left Image">
