@@ -41,9 +41,10 @@
             color: #555;
         }
         input[type="text"],
-        input[type="email"],
         input[type="tel"],
-        input[type="date"] {
+        input[type="date"],
+        input[type="number"],
+        select {
             width: 100%;
             padding: 12px;
             margin-bottom: 15px;
@@ -79,12 +80,28 @@
         <form id="registrationForm">
             <label for="name">نام:</label>
             <input type="text" name="name" required="" />
-            <label for="email">ایمیل:</label>
-            <input type="email" name="email" required="" />
-            <label for="phone">شماره تماس:</label>
-            <input type="tel" name="phone" required="" />
+            <label for="lastName">نام خانوادگی:</label>
+            <input type="text" name="lastName" required="" />
+            <label for="fatherName">نام پدر:</label>
+            <input type="text" name="fatherName" required="" />
+            <label for="nationalId">کد ملی:</label>
+            <input type="number" name="nationalId" required="" />
             <label for="birthdate">تاریخ تولد:</label>
             <input type="date" name="birthdate" required="" />
+            <label for="grade">پایه تحصیلی:</label>
+            <select name="grade" required="">
+                <option value="دهم">دهم</option>
+                <option value="یازدهم">یازدهم</option>
+                <option value="دوازدهم">دوازدهم</option>
+            </select>
+            <label for="school">مدرسه:</label>
+            <input type="text" name="school" required="" />
+            <label for="address">آدرس:</label>
+            <input type="text" name="address" required="" />
+            <label for="phone">شماره تماس:</label>
+            <input type="tel" name="phone" required="" />
+            <label for="choirGroup">نام گروه سرود:</label>
+            <input type="text" name="choirGroup" required="" />
             <button type="submit">ثبت‌نام</button>
         </form>
         <div class="footer">با تشکر از شما!</div>
@@ -95,13 +112,21 @@
             event.preventDefault();
             const formData = new FormData(this);
             const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
+            const lastName = formData.get('lastName');
+            const fatherName = formData.get('fatherName');
+            const nationalId = formData.get('nationalId');a
             const birthdate = formData.get('birthdate');
+            const grade = formData.get('grade');
+            const school = formData.get('school');
+            const address = formData.get('address');
+            const phone = formData.get('phone');
+            const choirGroup = formData.get('choirGroup');
+
             // شماره واتساپ خود را در اینجا وارد کنید
             const whatsappNumber = '+989160709087';
-            const message = ثبت نام جدید:\nنام: ${name}\nایمیل: ${email}\nشماره تماس: ${phone}\nتاریخ تولد: ${birthdate};
+            const message = ثبت نام جدید:\nنام: ${name}\nنام خانوادگی: ${lastName}\nنام پدر: ${fatherName}\nکد ملی: ${nationalId}\nتاریخ تولد: ${birthdate}\nپایه تحصیلی: ${grade}\nمدرسه: ${school}\nآدرس: ${address}\nشماره تماس: ${phone}\nنام گروه سرود: ${choirGroup};
             const whatsappLink = https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)};
+            
             // باز کردن لینک واتساپ
             window.open(whatsappLink, '_blank');
         });
