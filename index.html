@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فرم ثبت نام</title>
+    <style>
+        body {
+            background-image: url('back.jpg'); /* عکس پس‌زمینه */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            direction: rtl;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+        }
+        .container {
+            width: 300px;
+            margin: 70px auto;
+            padding: 30px;
+            background: rgba(252, 255, 236, 0.9);
+            border-radius: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .logo {
+            width: 100px;
+            position: absolute;
+        }
+        .logo-right {
+            top: 10px;
+            right: 10px;
+        }
+        .logo-left {
+            top: 10px;
+            left: 10px;
+        }
+        .bottom-logo {
+            width: 50px;
+            margin-top: 20px;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+        .bottom-logo {
+            width: 50px;
+            margin-top: 20px;
+        }
+        h3{
+            color: rgba(67, 211, 27, 0);
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 247, 0.662);
+        }
+    </style>
+</head>
+<body>
+    <img src="logo1.jpg" class="logo logo-right">
+    <img src="logo2.jpg" class="logo logo-left">
+<p>
+
+   <h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد
+</h3></p>
+<h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد
+</h3></p>
+<h1>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد</h1>
+    <div class="container">
+        <h2>فرم ثبت نام</h2>
+        <input type="text" id="name" placeholder="نام">
+        <input type="text" id="family" placeholder="نام خانوادگی">
+        <input type="text" id="father" placeholder="نام پدر">
+        <input type="text" id="nationalCode" placeholder="کد ملی">
+        <input type="text" id="birthDate" placeholder="تاریخ تولد (مثلاً 1385/02/15)">
+        <input type="text" id="grade" placeholder="پایه تحصیلی">
+        <input type="text" id="school" placeholder="مدرسه">
+        <input type="text" id="address" placeholder="آدرس">
+        <input type="text" id="phone" placeholder="شماره تماس">
+        <input type="text" id="group" placeholder="نام گروه سرود">
+        <button onclick="sendToWhatsApp()">ارسال به واتساپ</button>
+        <img src="logo3.jpg" class="bottom-logo">
+    </div>
+
+    <script>
+        function sendToWhatsApp() {
+            let name = document.getElementById("name").value;
+            let family = document.getElementById("family").value;
+            let father = document.getElementById("father").value;
+            let nationalCode = document.getElementById("nationalCode").value;
+            let birthDate = document.getElementById("birthDate").value;
+            let grade = document.getElementById("grade").value;
+            let school = document.getElementById("school").value;
+            let address = document.getElementById("address").value;
+            let phone = document.getElementById("phone").value;
+            let group = document.getElementById("group").value;
+
+            let message = ثبت نام جدید%0A-----------------%0Aنام: ${name}%0Aنام خانوادگی: ${family}%0Aنام پدر: ${father}%0Aکد ملی: ${nationalCode}%0Aتاریخ تولد: ${birthDate}%0Aپایه تحصیلی: ${grade}%0Aمدرسه: ${school}%0Aآدرس: ${address}%0Aشماره تماس: ${phone}%0Aنام گروه سرود: ${group};
+            
+            let phoneNumber = "989178537782"; // شماره واتساپ بدون +
+            window.open(https://wa.me/${phoneNumber}?text=${message}, "_blank");
+        }
+    </script>
+</body>
+</html>
