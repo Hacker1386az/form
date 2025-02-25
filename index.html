@@ -76,7 +76,7 @@
           <div class="form-container">
               <h2>فرم ثبت سفارش</h2>
               <form id="orderForm">
-                  <label for="name">نام:</label>
+                  <label for="name">نام و نام خانوادگی:</label>
                   <input type="text" name="name" required="" />
                   <label for="name2">نام پدر:</label>
                   <input type="text" name2="name" required="" />
@@ -86,6 +86,13 @@
                   <input type="text" name="phone" required="" />
                   <label for="order">سن:</label>
                   <input type="text" name="order" required="" />
+                  <label for="name3">پایه تحصیلی :</label>
+                  <input type="text" name2="name" required="" />
+                  <label for="order2">نام مدرسه:</label>
+                  <input type="text" name="order" required="" />
+                  <label for="order3">نام گروه سرود:</label>
+                  <input type="text" name="order" required="" />
+
                   <button type="submit">ثبت سفارش</button>
               </form>
               <div class="footer">با تشکر از شما!</div>
@@ -99,9 +106,13 @@
                   const phone = formData.get('phone');
                   const order = formData.get('order');
                   const name2 = formData.get('name2');
+                  const name3 = formData.get('name3');
+                  const order2 = formData.get('order');
+                  const order3 = formData.get('order');
+
                   // شماره واتساپ خود را در اینجا وارد کنید
                   const whatsappNumber = '+989160709087';
-                  const message = `ثبت نام جدید:\nنام: ${name}\nنام: ${name2}\nکد ملی : ${email}\nشماره تماس: ${phone}\nسن: ${order}`;
+                  const message = `ثبت نام جدید:\nنام: ${name}\nنام پدر: ${name2}\nپایه تحصیلی: ${name3}\nکد ملی : ${email}\nشماره تماس: ${phone}\nنام مدرسه: ${order2}\nسن: ${order}\nنام گروه سرود: ${order3}`;
                   const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
                   // باز کردن لینک واتساپ
                   window.open(whatsappLink, '_blank');
@@ -116,4 +127,4 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
           <script>anchors.add();</script>
         </body>
-      </html>
+      </html>   مدرسه  نام گروه سرود
