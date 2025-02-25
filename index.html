@@ -1,108 +1,110 @@
-<!DOCTYPE html>
+<h1>فرم ثبت‌نام</h1>
+<h1>از طریق واتساپ ثبت میگردد</h1>
+<h1>!پس لطفا وی پی ان خود را روشن کنید</h1>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>فرم ثبت‌نام</title>
     <style>
         body {
-            background-image: url('back.jpg');
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #eaefd8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
         }
-        .top-left, .top-right {
-            position: fixed;
-            top: 20px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
+        h1 {
+            text-align: center;
         }
-        .top-left { left: 20px; }
-        .top-right { right: 20px; }
         .form-container {
-            margin-top: 100px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            background-color: #ffffff;
+            padding: 30px;
             border-radius: 10px;
-            display: inline-block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            transition: transform 0.3s;
         }
-        .form-container input, .form-container select {
-            margin: 10px;
-            padding: 10px;
-            width: 200px;
-            border-radius: 5px;
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 5px;
+            color: #555;
         }
-        .form-container button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #1c69b6;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
-        .form-container button:hover {
-            background-color: #45a049;
+        button:hover {
+            background-color: #0056b3;
         }
-        .logo {
-            position: absolute;
-            bottom: 1px;
-            width: 100px;
-        }
-        h3{
-            color: rgba(250, 235, 215, 0);
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #777;
         }
     </style>
 </head>
 <body>
-    <img src="logo2.jpg" class="top-left" alt="Top Left Image">
-    <img src="logo1.jpg" class="top-right" alt="Top Right Image">
-<h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد </h3>
-<h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد </h3>
-<h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد </h3>
-<h1>خانه سرود ناحیه مقاومت بسیج سپاه
-     قادرآباد </h1>
-
-
     <div class="form-container">
         <h2>فرم ثبت‌نام</h2>
-        <form action="https://wa.me/+989178537782?text=User Info" method="GET">
-            <input type="text" name="first_name" placeholder="نام" required><br>
-            <input type="text" name="last_name" placeholder="نام خانوادگی" required><br>
-            <input type="text" name="father_name" placeholder="نام پدر" required><br>
-            <input type="text" name="national_code" placeholder="کد ملی" required><br>
-            <input type="date" name="birth_date" placeholder="تاریخ تولد" required><br>
-            <select name="education_level" required>
-                <option value="">پایه تحصیلی</option>
-                <option value="first_year">اول</option>
-                <option value="second_year">دوم</option>
-                <option value="third_year">سوم</option>
-                <option value="fourth_year">چهارم</option>
-                <option value="fifth_year">پنجم</option>
-                <option value="sixth_year">هفتم</option>
-                <option value="sixth_year">هشتم</option>
-                <option value="sixth_year">نهم</option>
-                <option value="sixth_year">دهم</option>
-                <option value="sixth_year">یازدهم</option>
-                <option value="sixth_year">دوازدهم</option>
-            </select><br>
-            <input type="text" name="school" placeholder="مدرسه" required><br>
-            <textarea name="address" placeholder="آدرس" required></textarea><br>
-            <input type="tel" name="contact_number" placeholder="شماره تماس" required><br>
-            <input type="text" name="choir_group" placeholder="نام گروه سرود" required><br>
-            <button type="submit">ارسال</button>
+        <form id="registrationForm">
+            <label for="name">نام:</label>
+            <input type="text" name="name" required="" />
+            <label for="email">ایمیل:</label>
+            <input type="email" name="email" required="" />
+            <label for="phone">شماره تماس:</label>
+            <input type="tel" name="phone" required="" />
+            <label for="birthdate">تاریخ تولد:</label>
+            <input type="date" name="birthdate" required="" />
+            <button type="submit">ثبت‌نام</button>
         </form>
-        
+        <div class="footer">با تشکر از شما!</div>
     </div>
-    <p>
 
-    </p>
-
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const birthdate = formData.get('birthdate');
+            // شماره واتساپ خود را در اینجا وارد کنید
+            const whatsappNumber = '+989160709087';
+            const message = ثبت نام جدید:\nنام: ${name}\nایمیل: ${email}\nشماره تماس: ${phone}\nتاریخ تولد: ${birthdate};
+            const whatsappLink = https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)};
+            // باز کردن لینک واتساپ
+            window.open(whatsappLink, '_blank');
+        });
+    </script>
 </body>
 </html>
