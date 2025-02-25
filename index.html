@@ -3,132 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فرم ثبت نام</title>
+    <title>فرم ثبت‌نام</title>
     <style>
         body {
-            background-image: url('back.jpg'); /* عکس پس‌زمینه */
+            background-image: url('back.jpg');
             background-size: cover;
-            background-position: center;
             font-family: Arial, sans-serif;
             text-align: center;
-            direction: rtl;
+            margin: 0;
+            padding: 0;
         }
-        .header {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            color: white;
-            text-shadow: 2px 2px 4px black;
-        }
-        .container {
-            width: 300px;
-            margin: 70px auto;
-            padding: 30px;
-            background: rgba(252, 255, 236, 0.9);
-            border-radius: 30px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-        input {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background: green;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-        .logo {
-            width: 100px;
-            position: absolute;
-        }
-        .logo-right {
-            top: 10px;
-            right: 10px;
-        }
-        .logo-left {
-            top: 10px;
-            left: 10px;
-        }
-        .bottom-logo {
-            width: 50px;
-            margin-top: 20px;
-        }
-        .logo {
+        .top-left, .top-right {
+            position: fixed;
+            top: 20px;
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin: 0 20px;
+            object-fit: cover;
         }
-        .bottom-logo {
-            width: 50px;
-            margin-top: 20px;
+        .top-left { left: 20px; }
+        .top-right { right: 20px; }
+        .form-container {
+            margin-top: 100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
         }
-        h3{
-            color: rgba(67, 211, 27, 0);
+        .form-container input, .form-container select {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
-        h1{
-            color: rgb(0, 0, 0);
-            background-color: rgba(255, 255, 247, 0.662);
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+        .logo {
+            position: absolute;
+            bottom: 1px;
+            width: 100px;
         }
     </style>
 </head>
 <body>
-    <img src="logo1.jpg" class="logo logo-right">
-    <img src="logo2.jpg" class="logo logo-left">
-<p>
+    <img src="logo2.jpg" class="top-left" alt="Top Left Image">
+    <img src="logo1.jpg" class="top-right" alt="Top Right Image">
 
-   <h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد
-</h3></p>
-<h3>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد
-</h3></p>
-<h1>خانه سرود ناحیه مقاومت بسیج سپاه قادرآباد</h1>
-    <div class="container">
-        <h2>فرم ثبت نام</h2>
-        <input type="text" id="name" placeholder="نام">
-        <input type="text" id="family" placeholder="نام خانوادگی">
-        <input type="text" id="father" placeholder="نام پدر">
-        <input type="text" id="nationalCode" placeholder="کد ملی">
-        <input type="text" id="birthDate" placeholder="تاریخ تولد (مثلاً 1385/02/15)">
-        <input type="text" id="grade" placeholder="پایه تحصیلی">
-        <input type="text" id="school" placeholder="مدرسه">
-        <input type="text" id="address" placeholder="آدرس">
-        <input type="text" id="phone" placeholder="شماره تماس">
-        <input type="text" id="group" placeholder="نام گروه سرود">
-        <button onclick="sendToWhatsApp()">ارسال به واتساپ</button>
-        <img src="logo3.jpg" class="bottom-logo">
+    <div class="form-container">
+        <h2>فرم ثبت‌نام</h2>
+        <form action="https://wa.me/+989178537782?text=User Info" method="GET">
+            <input type="text" name="first_name" placeholder="نام" required><br>
+            <input type="text" name="last_name" placeholder="نام خانوادگی" required><br>
+            <input type="text" name="father_name" placeholder="نام پدر" required><br>
+            <input type="text" name="national_code" placeholder="کد ملی" required><br>
+            <input type="date" name="birth_date" placeholder="تاریخ تولد" required><br>
+            <select name="education_level" required>
+                <option value="">پایه تحصیلی</option>
+                <option value="first_year">اول</option>
+                <option value="second_year">دوم</option>
+                <option value="third_year">سوم</option>
+                <option value="fourth_year">چهارم</option>
+                <option value="fifth_year">پنجم</option>
+                <option value="sixth_year">ششم</option>
+            </select><br>
+            <input type="text" name="school" placeholder="مدرسه" required><br>
+            <textarea name="address" placeholder="آدرس" required></textarea><br>
+            <input type="tel" name="contact_number" placeholder="شماره تماس" required><br>
+            <input type="text" name="choir_group" placeholder="نام گروه سرود" required><br>
+            <button type="submit">ارسال</button>
+        </form>
+        
     </div>
-<script>
-    function sendToWhatsApp() {
-        let name = document.getElementById("name").value;
-        let family = document.getElementById("family").value;
-        let father = document.getElementById("father").value;
-        let nationalCode = document.getElementById("nationalCode").value;
-        let birthDate = document.getElementById("birthDate").value;
-        let grade = document.getElementById("grade").value;
-        let school = document.getElementById("school").value;
-        let address = document.getElementById("address").value;
-        let phone = document.getElementById("phone").value;
-        let group = document.getElementById("group").value;
+    <p>
 
-        let message = ثبت نام جدید\n-----------------\nنام: ${name}\nنام خانوادگی: ${family}\nنام پدر: ${father}\nکد ملی: ${nationalCode}\nتاریخ تولد: ${birthDate}\nپایه تحصیلی: ${grade}\nمدرسه: ${school}\nآدرس: ${address}\nشماره تماس: ${phone}\nنام گروه سرود: ${group};
+    </p>
 
-        let phoneNumber = "989178537782"; // شماره واتساپ بدون +
-        let encodedMessage = encodeURIComponent(message); // تبدیل به فرمت URL
-        let whatsappUrl = https://wa.me/${phoneNumber}?text=${encodedMessage};
-
-        window.open(whatsappUrl, "_blank");
-    }
-</script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
 </body>
 </html>
